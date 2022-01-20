@@ -1,0 +1,99 @@
+<html>
+<body>
+<script>
+
+console.log("SECTION 1: Creating objects\n-----------------");
+
+var someDog = {
+	"name": "Happy",
+	"legs": 3,
+	"tails": 1,
+	"friends": []
+};
+
+console.log("someDog:");
+console.log(someDog.name);
+console.log(someDog["name"]); // You can use this if the attribute has spaces in it
+
+function makeYourOwnDog(name, legs, tails, friends) {
+	var yourDog = {
+		"name": name,
+		"legs": legs,
+		"tails": tails,
+		"friends": friends
+	};
+	return yourDog;
+}
+
+console.log("myDog:");
+myDog = makeYourOwnDog("Wafer", 4, 1, ["Everyone!!"]);
+console.log(myDog);
+console.log(myDog.name);
+
+// You can just add more attributes to the object
+myDog.favoriteFood = "Peaches";
+console.log(myDog.favoriteFood);
+
+myDog["color"] = "Brown";
+console.log(myDog.color);
+
+// You can also delete attributes
+delete myDog.color;
+console.log(myDog.color); // prints: undefined
+
+
+
+console.log("\n\nSECTION 2: Uses\n-----------------");
+
+var numbersStorage = {
+	"One": 1,
+	"Two": 2,
+	"Three": 3,
+	"Four": 4
+};
+
+console.log(numbersStorage["Two"]);
+
+
+const AVG_TEMPERATURES = {
+	today: 77.5,
+	tomorrow: 79
+};
+
+
+var courses = 
+{
+	"MEM2016":
+	{
+		"name": "Memeologia",
+		"creds": 20,
+		"content": ["module 1", "module 2"]
+	},
+
+	
+	"AST3000":
+	{
+		"name": "Astronomia extragalactica avanzada",
+		"creds": 30,
+		"contents": ["Astronomia basica"]
+	}
+};
+
+
+console.log("\n\nSECTION 3: Checking existence of property\n-----------------");
+
+function checkingExistence(obj, property) {
+	if (obj.hasOwnProperty(property)) {
+		console.log("Has property " + property);
+	}
+	else {
+		console.log("Does not have property " + property);
+	}
+}
+
+checkingExistence(myDog, "name");
+checkingExistence(myDog, "wings");
+
+</script>
+</body>
+</html>

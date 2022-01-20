@@ -1,0 +1,152 @@
+<html>
+<body>
+	
+<script>
+
+/*
+In JavaScript there are 5 different data types that can contain values:
+
+string
+number
+boolean
+object
+function
+
+There are 6 types of objects:
+
+Object
+Date
+Array
+String
+Number
+Boolean
+
+And 2 data types that cannot contain values:
+
+null
+undefined
+
+*/
+
+console.log("SECTION 1: Variables var and let\n-----------------");
+
+var number = 1;
+number = "uno";
+// Variables can change type without problem
+
+var myName = "Andie";
+let myLastName = "Perez";
+const pi = 3.14;
+/*
+Differences:
+Var: used throughout the whole program
+Let: only used in scope
+Const: Variable that shouldn't and can't ever change
+*/
+
+// We are declaring and initializing variables in a scope.
+if (true) {
+	var varVariable = "varVariable";
+	let letVariable = "letVariable";
+}
+
+console.log(varVariable); // This runs fine
+
+try {
+	console.log(letVariable); // This does not run fine
+} 
+catch (err) {
+	console.log("Let variable is part  of the if scope and can't be used outside  of it. Var variable can.");
+}
+
+
+// Booleans
+var bool1 = "string"; // This counts as true!
+var bool2 = 10 < 9; // This counts as false
+
+
+console.log("\n\nSECTION 2: Declaring, initializing, variables interacting\n-----------------");
+
+
+// Declaring variable
+var a;
+// Asigning variables or initializing
+var b = 2;
+a = 7;
+
+// it's case sensitive
+var A = 9;
+A++;
+
+var c = 0.7;
+c += 1;
+c -= 1;
+c *= 1;
+c /= 1;
+
+console.log("\nOnly numbers: Is read as numbers:");
+console.log(a + A + c);
+
+
+var d = "text among numbers ";
+var f = a + A + c;
+
+console.log("\nString + number: With a string included, it's read as text");
+console.log(d + f); // = text among numbers 17.7
+
+console.log("\nString + many numbers: All numbers are read as strings")
+console.log(d + a + A + c); // = text among numbers 7100.7
+
+var remainder = 11 % 3; // = 2
+
+// Variables are written in camel case
+
+
+console.log("\n\nSECTION 3: Strings\n-----------------");
+
+// STRINGS and escape character \ (Alt Gr)
+var myString = "This string has \"double quotes\" inside it";
+var myString2 = 'This string has "double quotes" inside it';
+var myString3 = "This is a string: \nB) or is it?";
+
+console.log(myString);
+console.log(myString2);
+console.log(myString3);
+console.log(myString3.length);
+
+var word = "banana";
+
+console.log("Index in a string")
+console.log(word[0]);
+console.log(word[1]);
+console.log(word[2]);
+console.log(word[3]);
+console.log(word[4]);
+console.log(word[5]);
+
+
+var someString = "Jello World";
+someString[0] = "H";
+console.log(someString);
+console.log("Strings are INMUTABLE. someString 'Jello World' does not change.");
+
+
+/* 
+When you try to get to an index that is not valid, undefined is returned (there is no Error)
+*/
+console.log("Invalid  indexes");
+console.log(word[6]);
+console.log(word[-1]);
+
+
+
+console.log("\n\nSECTION 4: Parsing\n-----------------");
+
+console.log(parseInt("2") + 3);
+
+
+
+</script>
+</html>
+</body>
+	

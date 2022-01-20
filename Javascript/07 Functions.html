@@ -1,0 +1,109 @@
+<html>
+<body>
+<script>
+
+
+console.log("SECTION 1: ...args\n-----------------");
+
+function func(...args) {
+	for (var element in args) {
+		console.log(args[element]);
+	}
+}
+
+func("apples", "pears", "oranges");
+
+
+
+console.log("\n\nSECTION 2: Other way to write functions\n-----------------");
+
+var myFunction = (name) => console.log("Hello " + name);
+myFunction("Andie");
+
+var myFunction2 = () => {
+	return "Hello world!";
+}
+console.log(myFunction2());
+
+
+
+console.log("\n\nSECTION 3: Filter\n-----------------");
+
+function filterFunction(x) {
+	return x >= 0;
+}
+
+const numberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+var positiveNumbers = numberArray.filter(filterFunction);
+console.log(positiveNumbers);
+
+
+
+console.log("\n\nSECTION 4: Map\n-----------------")
+
+function funcX2(x) {
+	return x * 2;
+}
+
+var doubleNumbers = numberArray.map(funcX2);
+console.log(doubleNumbers);
+
+
+
+console.log("\n\nSECTION 5: Reduce\n-----------------");
+
+var array = [1,2,3,4];
+var newArray = array.reduce((a, b) => a + b);
+console.log(newArray);
+var newArray2 = array.reduce((a, b) => a * b);
+console.log(newArray2);
+
+
+
+console.log("\n\nSECTION 6: forEach\n-----------------");
+
+const numbers = [1,2,3,4];
+
+var numbersListed = "";
+function printNumbers(value) {
+	numbersListed += value + " ";
+}
+numbers.forEach(printNumbers);
+console.log(numbersListed);
+
+
+
+
+console.log("\n\nSECTION 7: every\n-----------------");
+
+function areValuesPositiveFunc(value) {
+	return value > 0;
+}
+
+var areValuesPositive = numbers.every(areValuesPositiveFunc);
+console.log(areValuesPositive);
+
+
+console.log("\n\nSECTION 8: some\n-----------------");
+
+function areValuesAbove2Func(value) {
+	return value > 2;
+}
+
+var areValuesAbove2 = numbers.some(areValuesAbove2Func);
+console.log(areValuesAbove2);
+
+
+console.log("\n\nSECTION 9: find\n-----------------");
+
+function findFunction(value) {
+	return value > 1;
+}
+var result = numbers.find(findFunction);
+console.log(result); // *First* value that is higher than 1 in the array
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<html>
+<body>
+<script>
+
+// Scope: Visibility of variables
+
+
+console.log("SECTION 1: Global variables\n-----------------");
+
+// Global scope can be seen and used in all code
+var globalVar = 10; // Can be accessed from everywhere
+
+function findGlobalVar() {
+	console.log("Running findGlobalVar()");
+	// Is the variable's type undefined by the time you run this function?
+   if (typeof globalVar != "undefined") {
+      console.log("Variable defined! " + globalVar);
+   }
+   else {
+      console.log("Error : undefined");
+   }
+}
+
+findGlobalVar();
+
+
+function globalVar2Setter() {
+	console.log("Setting globalVar2");
+   	globalVar2 = 6; // Without var it becomes global
+}
+
+// UNDEFINED if used before func()
+// DEFINED if used after
+function findGlobalVar2() {
+	console.log("Running findGlobalVar()");
+    if (typeof globalVar2 != "undefined") {
+   	   console.log("Variable defined! " + globalVar2);
+   	}
+   	else {
+   	   console.log("Error : undefined");
+   	}
+}
+
+
+findGlobalVar2();
+globalVar2Setter();
+findGlobalVar2();
+
+
+console.log("\n\nSECTION 2: Priority\n-----------------");
+
+var variable = "apples";
+
+function func2() {
+   var variable = "bananas"
+   return variable
+}
+
+console.log(variable); // Apples
+console.log(func2()); // Bananas
+console.log(variable); // Apples
+
+</script>
+</body>
+</html>

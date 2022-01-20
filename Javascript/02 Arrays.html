@@ -1,0 +1,189 @@
+<html>
+<body>
+<script>
+
+/*
+How to declare
+Functions:
+- push() 
+- shift()
+- unshift()
+- pop()
+
+*/
+
+console.log("SECTION 1: Introduction\n-----------------");
+
+
+var array = ["apple", "pear", "orange", "banana"];
+
+var alternativeArray = [];
+alternativeArray.push("apple");
+alternativeArray.push("pear");
+alternativeArray.push("orange");
+alternativeArray.push("banana");
+
+var alternativeArray2 = new Array("apple", "pear", "orange", "banana"); 
+
+console.log(array);
+console.log(alternativeArray);
+console.log(alternativeArray2);
+
+for (var element in array) {
+	// Note that element is the index
+	// console.log(element);
+	console.log(array[element]);
+}
+
+// Arrays are mutable
+console.log("Index 1: " + array[1]);
+console.log("New index 1 value is 'pineapple'");
+array[1] = "pineapple";
+console.log("Index 1: " + array[1]);
+
+
+// console.log("Index -1: " + array[-1]);
+// Just as with strings, invalid indexes return undefined
+
+
+
+
+console.log("\n\nSECTION 2: Array methods\n-----------------");
+
+console.log("Original array:");
+console.log(array);
+
+console.log("\n1) shift")
+array.shift(); // Erases the first element
+console.log(array);
+
+
+console.log("\n2) push");
+array.push("mango"); // Adds and element at the end
+console.log(array);
+
+console.log("\n3) unshift");
+array.unshift("clementine"); //Adds an element at index 0
+console.log(array);
+
+
+console.log("\n4) pop");
+var poppedElement = array.pop(); // returns last element and removes it from the array
+console.log("Popped element: " + poppedElement);
+console.log(array)
+
+
+console.log("\n5) splice");
+
+var newArray = ["apple", "pear", "orange", "banana", "kiwi", "melon"];
+console.log("Array:");
+console.log(newArray);
+console.log("After using splice")
+newArray.splice(2,3); 
+// Starting in index 2, remove 3 elements
+console.log(newArray);
+
+
+newArray.splice(0,2, "kiwi", "watermelon");
+// Starting in index 0, replace with 2 elements: "kiwi", "watermelon"
+console.log(newArray);
+
+
+console.log("\n6) join");
+console.log(newArray.join("**"));
+
+
+console.log("\n7) Sort and reverse:")
+newArray.sort();
+console.log(newArray);
+newArray.reverse();
+console.log(newArray);
+
+
+console.log("\n\nSECTION 3: JSON.stringify\n-----------------");
+
+var numArray = [1, 2, 3, 4, 5];
+var stringArray = JSON.stringify(numArray);
+console.log(stringArray);
+
+
+
+console.log("\n\nSECTION 4: Value vs Reference\n-----------------");
+
+var arr1 = ["element1", "element2", "element3"];
+var arr2;
+arr2 = arr1;
+arr2[0] = "new element1";
+console.log("Arr1");
+console.log(JSON.stringify(arr1));
+console.log("Arr2");
+console.log(JSON.stringify(arr2));
+
+console.log(arr1 === arr2);
+// Both arrays give the same value
+
+
+console.log("\n\n");
+
+
+var arr3 = [...arr1]; // A way to copy an array
+console.log(JSON.stringify(arr3));
+console.log(arr1 === arr3); // You can tell it's a different array from the last two. It takes another space in memory
+
+console.log("\n");
+
+arr3[0] = "new element2";
+console.log("Arr1");
+console.log(JSON.stringify(arr1));
+console.log("Arr3");
+console.log(JSON.stringify(arr3));
+// Since arr3 is its own array, the changes aren't shared between them
+
+
+console.log("\n\nSECTION 5: Destructuring\n-----------------");
+
+var [x, y, , z] = [1, 2, 3, 4]; // with , you skip a value of the list
+console.log(x);
+console.log(y);
+console.log(z);
+
+
+
+console.log("\n\nSECTION 6: More use of ...arr and destructuring\n-----------------");
+
+
+list = [1,2,3,4,5,6];
+
+function removeFirstTwo(list) {
+	var [...arr] = list;
+	console.log(arr.length); // 6
+
+	var [, ,...arr] = list; // You skip the first two elements
+	console.log(arr.length); // 4
+
+	var [a,b,...arr] = list; // You store the first two elements
+
+	console.log(a); // list[0]
+	console.log(b); // list[1]
+	console.log(arr.length); // 4
+	return arr;
+}
+
+var editedList = removeFirstTwo(list);
+console.log("Edited list");
+console.log(editedList);
+
+
+
+console.log("\n\nSECTION 7: Index functions\n-----------------");
+
+var fruitArray = ["apple", "orange", "pear", "kiwi", "banana", "apple"];
+console.log(fruitArray.indexOf("orange")); //1
+console.log(fruitArray.indexOf("melon")); //-1 not found
+console.log(fruitArray.lastIndexOf("apple")); //5
+
+</script>
+</html>
+</body>
+
+

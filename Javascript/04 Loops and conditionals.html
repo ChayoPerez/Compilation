@@ -1,0 +1,117 @@
+<html>
+<body>
+<script>
+
+console.log("SECTION 1: If\n-----------------");
+
+
+if (true) {
+	
+}
+else if (true) {
+
+}
+else {
+
+}
+
+
+console.log("\n\nSECTION 1.1: Boolean statements\n-----------------");
+
+function checkSign(num)
+{
+	return num > 0 ? "positive": num < 0 ? "negative": "zero";
+}
+
+console.log(checkSign(-1));
+console.log(checkSign(2));
+console.log(checkSign(0));
+
+
+
+
+console.log("\n\nSECTION 2: Switch\n-----------------");
+
+function func1(x) {
+	switch (x) {
+		case 1:
+		return "The value is 1";
+		case 2:
+		return "The value is 2";
+		default:
+		return "The value isn't valid."
+	}
+}
+
+console.log(func1(1));
+console.log(func1(2));
+console.log(func1(3));
+
+
+
+
+
+
+console.log("\n\nSECTION 3: While\n-----------------");
+
+console.log("Normal while");
+var x = 0;
+while (x < 3) {
+	console.log(x);
+	x += 1;
+}
+
+console.log("Do while");
+do {
+	console.log(x);
+	x += 1;
+}
+while (x < 3);
+// Even though the condition starts being false
+// The DO code runs before it's checked
+
+
+
+console.log("\n\nSECTION 4: For\n-----------------");
+
+for (var i = 0; i < 3; i++) {
+	console.log(i);
+}
+
+
+console.log("\n\nSECTION 5: For in vs. For of\n-----------------");
+
+var fruits = ["banana", "apple", "orange"];
+for (fruit in fruits) {
+	console.log(fruit);
+}
+
+var fruits = ["banana", "apple", "orange"];
+for (fruit in fruits) {
+	console.log(fruits[fruit]);
+}
+console.log("---------");
+
+for (fruit of fruits) {
+	console.log(fruit);
+}
+
+
+console.log("\n\nSECTION 6: Break and continue\n-----------------");
+
+var i = 0;
+while (true) {
+	i += 1;
+	if (i == 2) {
+		continue; // You skip the rest of  the  while and start all over
+	}
+	else if (i == 10) {
+		break; // You break out of the while
+	}
+	console.log(i);
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<body>
+<script>
+
+console.log("SECTION 1: Classic class structure\n-----------------");
+
+class Book {
+		constructor (author) {
+			console.log("Constructor");
+			this._author = author;
+		}
+		get author() {
+			console.log("Getter");
+			return this._author;
+		}
+		set author (updatedAuthor) {
+			console.log("Setter");
+			this._author = updatedAuthor;
+		}
+		print() {
+			console.log("This is the book from " + this._author);
+		}
+	}
+
+var myBook = new Book("Andie");
+console.log(myBook.author);
+myBook.author = "Andie Perez";
+
+myBook.print();
+
+
+
+console.log("\n\nSECTION 2: Using functions and prototype\n-----------------");
+
+function Person(name) {
+	this.name = name;
+}
+
+Person.prototype.print = function() {
+	console.log(this.name + ": name printed");
+};
+var person1 = new Person("Pepito");
+var person2 = new Person("Juanito");
+
+person1.print();
+person2.print();
+
+
+
+</script>
+</body>
+</html>

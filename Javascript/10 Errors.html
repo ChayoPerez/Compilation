@@ -1,0 +1,25 @@
+<html>
+<body>
+<script>
+
+console.log("SECTION 1: Errors\n-----------------");
+
+
+try {
+  console.log("Trying code");
+  var c = 1/0
+  if  (c == Infinity) {
+  	throw "Error: Divided by zero";
+  }
+  console.log("Code successful") // Is not printed
+}
+catch(err) { // Runs if the error is thrown
+  console.log(err);
+}
+finally { // Always runs
+  console.log("Code attempted to run.");
+}
+
+</script>
+</body>
+</html>
